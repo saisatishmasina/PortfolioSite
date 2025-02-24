@@ -7,17 +7,35 @@ body {
 }
 
 header {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 16px;
     background-color: #333;
     color: white;
     padding: 20px;
 }
 
+ul {
+    text-align: left;
+    list-style-position: inside; /* Ensures bullet points stay aligned */
+}
+
+li {
+    text-align: left;
+}
+ol {
+    text-align: left;
+    list-style-position: inside; /* Ensures numbers stay aligned */
+    margin-left: 10px; /* Adjust spacing if needed */
+}
+
+
 section {
     margin: 20px;
     padding: 20px;
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
