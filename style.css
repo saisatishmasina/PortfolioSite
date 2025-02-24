@@ -12,7 +12,7 @@ nav {
     padding: 10px;
     width: fit-content; /* Makes the navbar as wide as its content */
     margin: 20px auto; /* Centers the navbar */
-    border-radius: 50px; /* Gives the navbar a pill shape */
+    border-radius: 30px; /* Gives the navbar a pill shape */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a slight shadow */
     position: relative;
 }
@@ -46,6 +46,29 @@ nav ul li a:hover {
     background-color: #ffcc00; /* Highlight color */
     color: black;
     transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Make nav items stack or shrink properly on mobile */
+@media (max-width: 480px) {
+    nav {
+        width: 85%; /* Makes navbar adapt to screen width */
+        padding: 10px; /* Reduce padding */
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 8px 0; /* Reduce spacing between items */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Reduce font size */
+        padding: 10px 15px; /* Adjust button size */
+    }
 }
 
 header {
