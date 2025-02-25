@@ -46,6 +46,8 @@ nav ul li a:hover {
     background-color: #ffcc00; /* Highlight color */
     color: black;
     transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Adds a shadow on hover */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for both properties */
 }
 
 /* Make nav items stack or shrink properly on mobile */
@@ -93,26 +95,47 @@ ol {
     list-style-position: inside; /* Ensures numbers stay aligned */
     margin-left: 10px; /* Adjust spacing if needed */
 }
-
+ ol li {
+    padding: 5px 0;
+ }
 
 section {
     margin: 20px;
     padding: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.3); /* Slightly transparent background */
     border-radius: 16px;
     box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Ensure pseudo-elements don't overflow the section */
 }
 
-/* .spacer {
-    aspect-ratio:500/300;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+section::before,
+section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 204, 0, 0.8); /* Semi-transparent yellow */
+    z-index: -1; /* Ensure the circles are behind the content */
 }
-.layer1{
-    background-image: url('./Waves.svg');
-} */
+
+section::before {
+    width: 400px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+}
+
+section::after {
+    width: 500px;
+    height: 300px;
+    bottom: -150px;
+    right: -150px;
+}
+
+.hidden {
+    display: none;
+}
+
 footer {
     margin-top: 20px;
     padding: 10px;
